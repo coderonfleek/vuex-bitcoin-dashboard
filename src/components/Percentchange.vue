@@ -3,10 +3,10 @@
         <div class="col-md-2 pd-10"><i class="fas fa-percent fa-4x"></i></div>
         <div class="col-md-10 text-right">
             <div class="counter-count">
-                10<sup>%</sup>  
+                {{percentageIncrease}}<sup>%</sup>  
             </div>
             <div>
-                3minutes ago
+                {{formatTimestamp(currentPrice.timestamp)}}
             </div>
         
         </div>
@@ -14,10 +14,21 @@
 </template>
 
 <script>
+import moment from "moment";
 export default {
   name: "Percentchange",
-  props: {
-    msg: String
+  computed: {
+    percentageIncrease() {
+      return this.$store.getters.percentageIncrease;
+    },
+    currentPrice() {
+      return this.$store.getters.currentPrice;
+    }
+  },
+  methods: {
+    formatTimestamp: timestamp => {
+      return moment(timestamp).fromNow();
+    }
   }
 };
 </script>

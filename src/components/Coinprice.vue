@@ -5,10 +5,11 @@
         </div>
         <div class="col-md-10 text-right">
             <div class="counter-count">
-                6,325<sup>.66</sup>  
+                {{format(price.amount)}}
+                <!--<sup>{{price.decimals}}</sup>-->
             </div>
             <div>
-                -$20<sup>.54</sup>
+                ${{difference}}
             </div>
         
         </div>
@@ -18,8 +19,18 @@
 <script>
 export default {
   name: "Coinprice",
-  props: {
-    msg: String
+  computed: {
+    price() {
+      return this.$store.getters.currentPrice;
+    },
+    difference() {
+      return this.$store.getters.difference;
+    }
+  },
+  methods: {
+    format: price => {
+      return price.toFixed(2);
+    }
   }
 };
 </script>
