@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import _ from "lodash";
 import prices from "./prices";
 
 //Configure Vuex for modules
@@ -12,10 +11,10 @@ const store = new Vuex.Store({
   },
   getters: {
     currentPrice: state => {
-      return _.orderBy(state.prices, ["timestamp"], ["desc"])[0];
+      return state.prices.concat().sort((a, b) => (b.timestamp - a.timestamp))[0];
     },
     previousPrice: state => {
-      return _.orderBy(state.prices, ["timestamp"], ["desc"])[1];
+      return state.prices.concat().sort((a, b) => (b.timestamp - a.timestamp))[1];
     },
     percentageIncrease: (state, getters) => {
       return (

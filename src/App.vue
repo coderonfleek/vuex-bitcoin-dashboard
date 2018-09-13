@@ -29,8 +29,6 @@
 </template>
 
 <script>
-  //Libraries
-  import _ from "lodash";
   //Components
   import CoinPrice from "./components/CoinPrice.vue";
   import PercentChange from "./components/PercentChange.vue";
@@ -50,7 +48,7 @@
     store,
     computed: {
       prices() {
-        return _.orderBy(store.state.prices, ["timestamp"], ["desc"]);
+        return store.state.prices.concat().sort((a, b) => (b.timestamp - a.timestamp));
       }
     },
     created: function () {
