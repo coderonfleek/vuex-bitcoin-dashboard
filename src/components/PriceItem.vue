@@ -16,7 +16,8 @@
     },
     methods: {
       formatTimestamp: timestamp => {
-        return timestamp;
+        const date = new Date(timestamp);
+        return date.toString().substring(16, 24);
       },
       formatPrice: amount => {
         return amount.toFixed(2);

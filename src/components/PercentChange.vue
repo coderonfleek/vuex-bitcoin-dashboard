@@ -14,8 +14,6 @@
 </template>
 
 <script>
-  import moment from "moment";
-
   export default {
     name: "PercentChange",
     computed: {
@@ -28,7 +26,8 @@
     },
     methods: {
       formatTimestamp: timestamp => {
-        return moment(timestamp).fromNow();
+        const currentDate = new Date(timestamp);
+        return currentDate.toString().substring(16, 24);
       }
     }
   };
