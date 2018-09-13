@@ -1,8 +1,8 @@
 <template>
   <li class="list-group-item">
     <div class="row">
-      <div class="col-md-8">${{formatPrice(price.amount)}}</div>
-      <div class="col-md-4 text-right">{{formatTimestamp(price.timestamp)}}</div>
+      <div class="col-8">${{formatPrice(price.amount)}}</div>
+      <div class="col-4 text-right">{{formatTimestamp(price.timestamp)}}</div>
     </div>
   </li>
 </template>

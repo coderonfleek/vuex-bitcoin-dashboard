@@ -1,13 +1,11 @@
 <template>
-  <div id="counter" class="row bg-danger text-white">
-    <div class="col-2 p-3">
-      <i class="fas fa-dollar-sign fa-4x"></i>
-    </div>
-    <div class="col-10 text-right">
-      <div class="counter-count">
-        {{format(price.amount)}}
+  <div id="counter" class="bg-success text-white">
+    <div class="row p-3">
+      <div class="col-2">
+        <i class="fas fa-dollar-sign fa-4x"></i>
       </div>
-      <div>
+      <div class="col-10 text-right">
+        <h2>{{format(price.amount)}}</h2>
         ${{difference}}
       </div>
     </div>
@@ -32,14 +30,3 @@
     }
   };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  #counter {
-    height: 100px;
-  }
-
-  .counter-count {
-    font-size: 42px;
-  }
-</style>

@@ -1,12 +1,11 @@
 <template>
-  <div id="counter" class="row bg-warning text-white">
-    <div class="col-2 p-3"><i class="fas fa-percent fa-4x"></i></div>
-    <div class="col-10 text-right">
-      <div class="counter-count">
-        {{percentageIncrease}}
-        <small>%</small>
-      </div>
-      <div>
+  <div id="counter" class="bg-primary text-white">
+    <div class="row p-3">
+      <div class="col-2"><i class="fas fa-percent fa-4x"></i></div>
+      <div class="col-10 text-right">
+        <h2>
+          {{percentageIncrease}}<small>%</small>
+        </h2>
         {{formatTimestamp(currentPrice.timestamp)}}
       </div>
     </div>
@@ -32,13 +31,3 @@
     }
   };
 </script>
-
-<style scoped>
-  #counter {
-    height: 100px;
-  }
-
-  .counter-count {
-    font-size: 42px;
-  }
-</style>

@@ -1,20 +1,20 @@
 <template>
   <div id="app" class="container">
     <div class="row">
-      <h1>Dashboard</h1>
+      <div class="col-12">
+        <h1>Dashboard</h1>
+      </div>
     </div>
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-sm-6">
         <CoinPrice/>
       </div>
-
-      <div class="col-md-5 offset-md-1">
+      <div class="col-sm-6">
         <PercentChange/>
       </div>
     </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-      <div class="col-md-12">
+    <div class="row mt-3">
+      <div class="col-sm-12">
         <div class="card">
           <div class="card-header">
             Bitcoin Pricing History
@@ -69,6 +69,7 @@
 
 <style>
   @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+  @import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
