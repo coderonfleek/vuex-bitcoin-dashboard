@@ -1,0 +1,26 @@
+<template>
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-md-8">${{formatPrice(price.amount)}}</div>
+      <div class="col-md-4 text-right">{{formatTimestamp(price.timestamp)}}</div>
+    </div>
+  </li>
+</template>
+
+
+<script>
+  export default {
+    name: "PriceItem",
+    props: {
+      price: Object
+    },
+    methods: {
+      formatTimestamp: timestamp => {
+        return timestamp;
+      },
+      formatPrice: amount => {
+        return amount.toFixed(2);
+      }
+    },
+  };
+</script>
