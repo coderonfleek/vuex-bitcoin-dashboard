@@ -48,7 +48,7 @@
     store,
     computed: {
       prices() {
-        return store.state.prices.concat().sort((a, b) => (b.timestamp - a.timestamp));
+        return store.state.prices;
       }
     },
     created: function () {
